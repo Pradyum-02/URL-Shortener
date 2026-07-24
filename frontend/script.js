@@ -11,7 +11,7 @@
   const statusEl      = document.getElementById("status");
 
   // ---------- Config (wire up later) ----------
-  const API_BASE = "http://localhost:5000"; // Change this to your Express server's URL
+  const API_BASE = "https://url-shortener-api-9b84.onrender.com"; // Change this to your Express server's URL
   const SHORTEN_ENDPOINT = "/api/shorten";
 
   // ---------- Helpers ----------
