@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>URL Shortener — Clean, shareable links instantly</title>
+  <meta name="description" content="Convert long URLs into clean, shareable links instantly." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Ambient background blobs -->
+  <div class="bg-blobs" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <main class="app">
+    <section class="card" role="region" aria-labelledby="app-title">
+      <header class="card-header">
+        <span class="pill">
+          <span class="pill-dot"></span> Shorten in Seconds
+        </span>
+        <h1 id="app-title">URL Shortener</h1>
+        <p class="subtitle">
+          Convert long URLs into clean, shareable links instantly.
+        </p>
+      </header>
+
+      <!-- Section 1: input long URL -->
+      <div class="field">
+        <label for="long-url" class="label">Paste Your Long URL</label>
+        <div class="input-wrap">
+          <input
+            id="long-url"
+            type="url"
+            class="input"
+            placeholder="https://example.com/very-long-link"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+
+        <button id="shorten-btn" class="btn btn-primary" type="button">
+          <span class="btn-label">Shorten URL</span>
+          <span class="btn-spinner" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <!-- Section 2: shortened URL -->
+      <div class="field">
+        <label for="short-url" class="label">Your Short URL</label>
+        <div class="input-wrap short-wrap">
+          <input
+            id="short-url"
+            type="text"
+            class="input input-readonly"
+            placeholder="Your shortened URL will appear here..."
+            readonly
+            aria-live="polite"
+          />
+          <button id="copy-btn" class="btn btn-ghost" type="button" aria-label="Copy short URL">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+            <span class="copy-label">Copy</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Status message -->
+      <p id="status" class="status" role="status" aria-live="polite">
+        Ready to shorten your first URL.
+      </p>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
