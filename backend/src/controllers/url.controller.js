@@ -36,7 +36,7 @@ if (existingURL) {
 
         success: true,
 
-        shortUrl: `https://url-shortener-api-9b84.onrender.com/${newURL.shortCode}`
+        shortUrl: `${process.env.BASE_URL}/${existingURL.shortCode}`
 
     });
 
@@ -54,7 +54,7 @@ if (existingURL) {
 
    res.status(201).json({
     success: true,
-    shortUrl: `https://url-shortener-api-9b84.onrender.com/${existingURL.shortCode}`
+    shortUrl: `${process.env.BASE_URL}/${newURL.shortCode}`
 });
 
     } catch (error) {
